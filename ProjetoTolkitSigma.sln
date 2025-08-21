@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35208.52
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A1BFAF35-62C2-42EF-A0D8-54715197439A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolkitConsole", "ToolkitConsole\ToolkitConsole.csproj", "{916004F5-A9B7-49D9-AB92-770BB0B1267D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{916004F5-A9B7-49D9-AB92-770BB0B1267D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{916004F5-A9B7-49D9-AB92-770BB0B1267D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{916004F5-A9B7-49D9-AB92-770BB0B1267D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{916004F5-A9B7-49D9-AB92-770BB0B1267D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{916004F5-A9B7-49D9-AB92-770BB0B1267D} = {A1BFAF35-62C2-42EF-A0D8-54715197439A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95817BB9-42E2-47BA-90CC-83F8C6E36213}
+	EndGlobalSection
+EndGlobal
