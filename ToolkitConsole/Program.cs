@@ -1,4 +1,6 @@
-﻿var loop = true;
+﻿using ToolkitConsole.VerificarAlfabetoCadeia;
+
+var loop = true;
 
 while (loop)
 {
@@ -9,6 +11,13 @@ while (loop)
     switch (opcaoDigitada)
     {
         case "1":
+            Console.Write("Digite um símbolo e depois uma cadeia: ");
+            var texto = Console.ReadLine();
+
+            if (string.IsNullOrEmpty(texto))
+                Console.Write("Texto inválido tente novamente.");
+
+            VerificarAlfabetoCadeia.Verificar(texto!);
             break;
         case "0":
             loop = false;
