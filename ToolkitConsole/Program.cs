@@ -17,7 +17,7 @@ while (loop)
             if (string.IsNullOrEmpty(texto))
                 Console.Write("Texto inválido tente novamente.");
 
-            VerificarAlfabetoCadeia.Verificar(texto!);
+            Console.WriteLine(VerificarAlfabetoCadeia.Verificar(texto!));
             break;
         case "0":
             loop = false;
