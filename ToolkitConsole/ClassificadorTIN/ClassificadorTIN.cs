@@ -12,74 +12,50 @@ public static class ClassificadorTIN
         [JsonPropertyName("gabarito")]
         public string Gabarito { get; init; } = "";
     }
-    public static string Classificador(string textojson)
+    public static void Classificador(string textojson)
     {
-        List<Problema>? problemas;
+
+        List<Problema> problemas;
         try
         {
-            problemas = JsonSerializer.Deserialize<List<Problema>>(textojson);
-            if (problemas == null)
-            {
-                return "Erro: O JSON está vazio ou mal formatado.";
-            }
+            problemas = JsonSerializer.Deserialize<List<Problema>>(textojson) ?? [];
         }
-        catch (JsonException)
+        catch (Exception ex)
         {
-            return "Erro: O texto inserido não é um JSON válido.";
+            Console.WriteLine("Erro ao ler JSON: " + ex.Message);
+            return;
         }
 
-        int acertos = 0;
-        int erros = 0;
-        int totalProblemas = problemas.Count;
+        if (problemas.Count == 0)
+            Console.WriteLine("Erro ao ler JSON");
 
-        if (totalProblemas == 0)
+        int acertos = 0, erros = 0;
+
+        foreach (var p in problemas)
         {
-            return "O JSON não contém nenhum problema para classificar.";
-        }
+            Console.WriteLine($"\nProblema: {p.Descricao}");
+            Console.Write("Classificação (T/I/N): ");
+            string? resposta = Console.ReadLine()?.Trim().ToUpper();
 
-        int problemaAtual = 1;
-        foreach (var problema in problemas)
-        {
-            Console.WriteLine($"\n----- Problema {problemaAtual}/{totalProblemas} -----");
-            Console.WriteLine($"Descrição: {problema.Descricao}");
+            if (string.IsNullOrEmpty(resposta))
+                Console.WriteLine("Resposta vazia!");
 
-            string? respostaUsuario = "";
-            while (respostaUsuario != "T" && respostaUsuario != "I" && respostaUsuario != "N")
+            if (resposta == p.Gabarito.ToUpper())
             {
-                Console.Write("Sua classificação (T/I/N): ");
-                respostaUsuario = (Console.ReadLine() ?? "").Trim().ToUpper();
-
-                if (respostaUsuario != "T" && respostaUsuario != "I" && respostaUsuario != "N")
-                {
-                    Console.WriteLine("Opção inválida. Por favor, digite T, I ou N.");
-                }
-            }
-
-            if (respostaUsuario == problema.Gabarito.ToUpper())
-            {
-                Console.WriteLine("Resposta correta! 👍");
+                Console.WriteLine("Acertou!");
                 acertos++;
             }
             else
             {
-                Console.WriteLine($"Resposta incorreta. 👎 A resposta certa era: {problema.Gabarito.ToUpper()}");
+                Console.WriteLine($"Errou! Correto seria: {p.Gabarito}");
                 erros++;
             }
-            problemaAtual++;
         }
 
-        Console.WriteLine("\n=============================================");
-        Console.WriteLine("               Resumo Final");
-        Console.WriteLine("=============================================");
-        Console.WriteLine($"Total de problemas: {totalProblemas}");
-        Console.WriteLine($"Acertos: {acertos} ✅");
-        Console.WriteLine($"Erros: {erros} ❌");
-
-        if (totalProblemas > 0)
-        {
-            double percentual = ((double)acertos / totalProblemas) * 100;
-            Console.WriteLine($"Percentual de acertos: {percentual:F2}%");
-        }
+        Console.WriteLine("===== RESUMO =====");
+        Console.WriteLine($"Total de problemas: {problemas.Count}");
+        Console.WriteLine($"Acertos: {acertos}");
+        Console.WriteLine($"Erros: {erros}");
     }
 }
 

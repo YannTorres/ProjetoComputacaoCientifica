@@ -7,4 +7,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="ClassificadorTIN\classificador.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ClassificadorTIN\classificador.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

@@ -1,0 +1,14 @@
+[
+  {
+    "Descricao": "Problema da parada",
+    "ClassificacaoCorreta": "N"
+  },
+  {
+    "Descricao": "Ordenação de números",
+    "ClassificacaoCorreta": "T"
+  },
+  {
+    "Descricao": "Encontrar clique máximo",
+    "ClassificacaoCorreta": "I"
+  }
+]

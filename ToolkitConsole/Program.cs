@@ -21,13 +21,10 @@ while (loop)
             Console.WriteLine(VerificarAlfabetoCadeia.Verificar(texto!));
             break;
         case "2":
-            Console.Write(@"Digite uma lista de itens no formato Json, no seguinte formato:
-            [ { ""descricao"": ""Encontrar o maior elemento em uma lista desordenada."", ""gabarito"": ""T"" } ]");
-            Console.WriteLine();
-            Console.Write("Digite o Json:");
-
-            var textojson = Console.ReadLine() ?? "";
-            ClassificadorTIN.Classificador(textojson);
+            Console.WriteLine("Altere o Json dentro da pasta ClassificadorTIN para fazer a classificação");
+            string caminho = Path.Combine(AppContext.BaseDirectory, "ClassificadorTIN/classificador.json");
+            var arquivojson = File.ReadAllText(caminho);
+            ClassificadorTIN.Classificador(arquivojson);
             break;
         case "3":
             break;
