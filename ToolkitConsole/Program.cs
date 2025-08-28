@@ -18,7 +18,7 @@ while (loop)
             if (string.IsNullOrEmpty(texto))
                 Console.Write("Texto inválido tente novamente.");
 
-            VerificarAlfabetoCadeia.Verificar(texto!);
+            Console.WriteLine(VerificarAlfabetoCadeia.Verificar(texto!));
             break;
         case "2":
             Console.Write(@"Digite uma lista de itens no formato Json, no seguinte formato:
