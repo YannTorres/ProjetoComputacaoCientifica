@@ -1,4 +1,5 @@
-﻿using ToolkitConsole.VerificarAlfabetoCadeia;
+﻿using ToolkitConsole.ClassificadorTIN;
+using ToolkitConsole.VerificarAlfabetoCadeia;
 
 var loop = true;
 
@@ -12,12 +13,27 @@ while (loop)
     {
         case "1":
             Console.Write("Digite um símbolo e depois uma cadeia: ");
-            var texto = Console.ReadLine();
+            var texto = Console.ReadLine() ?? "";
 
             if (string.IsNullOrEmpty(texto))
                 Console.Write("Texto inválido tente novamente.");
 
             VerificarAlfabetoCadeia.Verificar(texto!);
+            break;
+        case "2":
+            Console.Write(@"Digite uma lista de itens no formato Json, no seguinte formato:
+            [ { ""descricao"": ""Encontrar o maior elemento em uma lista desordenada."", ""gabarito"": ""T"" } ]");
+            Console.WriteLine();
+            Console.Write("Digite o Json:");
+
+            var textojson = Console.ReadLine() ?? "";
+            ClassificadorTIN.Classificador(textojson);
+            break;
+        case "3":
+            break;
+        case "4":
+            break;
+        case "5":
             break;
         case "0":
             loop = false;
