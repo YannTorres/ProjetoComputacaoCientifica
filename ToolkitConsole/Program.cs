@@ -19,16 +19,20 @@ while (loop)
                 Console.Write("Texto inválido tente novamente.");
 
             Console.WriteLine(VerificarAlfabetoCadeia.Verificar(texto!));
+            Console.WriteLine();
             break;
         case "2":
             Console.WriteLine("Altere o Json dentro da pasta ClassificadorTIN para fazer a classificação");
             string caminho = Path.Combine(AppContext.BaseDirectory, "ClassificadorTIN/classificador.json");
             var arquivojson = File.ReadAllText(caminho);
             ClassificadorTIN.Classificador(arquivojson);
+            Console.WriteLine();
             break;
         case "3":
             break;
         case "4":
+
+            Console.WriteLine();
             break;
         case "5":
             break;

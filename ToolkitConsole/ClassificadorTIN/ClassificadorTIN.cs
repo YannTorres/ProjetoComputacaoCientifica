@@ -6,10 +6,10 @@ public static class ClassificadorTIN
 {
     public record Problema
     {
-        [JsonPropertyName("descricao")]
+        [JsonPropertyName("Descricao")]
         public string Descricao { get; init; } = "";
 
-        [JsonPropertyName("gabarito")]
+        [JsonPropertyName("ClassificacaoCorreta")]
         public string Gabarito { get; init; } = "";
     }
     public static void Classificador(string textojson)

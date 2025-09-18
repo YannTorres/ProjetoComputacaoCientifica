@@ -1,7 +1,7 @@
 ﻿namespace ToolkitConsole.VerificarAlfabetoCadeia;
 public static class VerificarAlfabetoCadeia
 {
-    private static readonly HashSet<char> _alfabeto = new HashSet<char>("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789");
+    private static readonly HashSet<char> _alfabeto = new HashSet<char>("ab");
     public static string Verificar(string entrada)
     {
         if (string.IsNullOrWhiteSpace(entrada))
