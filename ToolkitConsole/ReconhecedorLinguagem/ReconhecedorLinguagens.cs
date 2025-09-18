@@ -69,6 +69,7 @@ namespace ToolkitConsole.ReconhecedorLinguagens
             {
                 if (c != 'a' && c != 'b') return false;
             }
+
             return true;
         }
 
