@@ -1,4 +1,5 @@
 ﻿using ToolkitConsole.ClassificadorTIN;
+using ToolkitConsole.DecisorTerminaComB;
 using ToolkitConsole.VerificarAlfabetoCadeia;
 
 var loop = true;
@@ -29,6 +30,13 @@ while (loop)
             Console.WriteLine();
             break;
         case "3":
+            Console.Write("Digite uma cadeia: ");
+            var cadeia = Console.ReadLine() ?? "";
+
+            if (string.IsNullOrEmpty(cadeia))
+                Console.Write("Texto inválido tente novamente.");
+
+            Console.WriteLine(DecisorTerminaComB.Decisor(cadeia!));
             break;
         case "4":
 
