@@ -1,5 +1,6 @@
 ﻿using ToolkitConsole.ClassificadorTIN;
 using ToolkitConsole.DecisorTerminaComB;
+using ToolkitConsole.ReconhecedorLinguagens;
 using ToolkitConsole.VerificarAlfabetoCadeia;
 
 var loop = true;
@@ -39,6 +40,7 @@ while (loop)
         case "4":
             break;
         case "5":
+            ReconhecedorLinguagens.Executar();
             break;
         case "0":
             loop = false;
