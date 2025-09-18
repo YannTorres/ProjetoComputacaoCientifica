@@ -1,4 +1,5 @@
-﻿using ToolkitConsole.ClassificadorTIN;
+﻿using ToolkitConsole.AvaliadorProposicionalPQR;
+using ToolkitConsole.ClassificadorTIN;
 using ToolkitConsole.DecisorTerminaComB;
 using ToolkitConsole.VerificarAlfabetoCadeia;
 
@@ -39,7 +40,7 @@ while (loop)
             Console.WriteLine(DecisorTerminaComB.Decisor(cadeia!));
             break;
         case "4":
-
+            AvaliadorProporcionalPQR.Avaliador();
             Console.WriteLine();
             break;
         case "5":
