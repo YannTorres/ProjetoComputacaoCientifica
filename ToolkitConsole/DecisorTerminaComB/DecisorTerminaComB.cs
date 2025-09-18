@@ -4,7 +4,7 @@ public static class DecisorTerminaComB
     public static string Decisor(string entrada)
     {
         bool terminaComB = entrada.EndsWith("b", StringComparison.OrdinalIgnoreCase);
-        var ehOuNao = "";
+        string ehOuNao = "";
 
         if (entrada == "")
         {

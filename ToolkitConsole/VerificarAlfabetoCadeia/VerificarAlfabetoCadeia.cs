@@ -1,6 +1,7 @@
 ﻿namespace ToolkitConsole.VerificarAlfabetoCadeia;
 public static class VerificarAlfabetoCadeia
 {
+    // Alfabetos permitidos
     private static readonly HashSet<char> _alfabeto = new HashSet<char>("ab");
     public static string Verificar(string entrada)
     {

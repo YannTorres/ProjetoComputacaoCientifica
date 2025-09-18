@@ -12,6 +12,7 @@ public static class ClassificadorTIN
         [JsonPropertyName("ClassificacaoCorreta")]
         public string Gabarito { get; init; } = "";
     }
+    
     public static void Classificador(string textojson)
     {
 
@@ -31,7 +32,7 @@ public static class ClassificadorTIN
 
         int acertos = 0, erros = 0;
 
-        foreach (var p in problemas)
+        foreach (Problema p in problemas)
         {
             Console.WriteLine($"\nProblema: {p.Descricao}");
             Console.Write("Classificação (T/I/N): ");

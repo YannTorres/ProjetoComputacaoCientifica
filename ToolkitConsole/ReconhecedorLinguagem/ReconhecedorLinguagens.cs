@@ -50,7 +50,7 @@ namespace ToolkitConsole.ReconhecedorLinguagens
                 nomeLinguagem = "L = { w | w = a b* }";
             }
 
-            var resultado = new Resultado
+            Resultado resultado = new Resultado
             {
                 Palavra = palavra,
                 Linguagem = nomeLinguagem,

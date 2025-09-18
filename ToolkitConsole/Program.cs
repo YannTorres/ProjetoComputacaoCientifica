@@ -4,19 +4,19 @@ using ToolkitConsole.DecisorTerminaComB;
 using ToolkitConsole.ReconhecedorLinguagens;
 using ToolkitConsole.VerificarAlfabetoCadeia;
 
-var loop = true;
+bool loop = true;
 
 while (loop)
 {
     ExibirMenu();
     Console.Write("Digite uma opção: ");
-    var opcaoDigitada = Console.ReadLine();
+    string opcaoDigitada = Console.ReadLine() ?? "";
 
     switch (opcaoDigitada)
     {
         case "1":
             Console.Write("Digite um símbolo e depois uma cadeia: ");
-            var texto = Console.ReadLine() ?? "";
+            string texto = Console.ReadLine() ?? "";
 
             if (string.IsNullOrEmpty(texto))
                 Console.Write("Texto inválido tente novamente.");
@@ -27,13 +27,13 @@ while (loop)
         case "2":
             Console.WriteLine("Altere o Json dentro da pasta ClassificadorTIN para fazer a classificação");
             string caminho = Path.Combine(AppContext.BaseDirectory, "ClassificadorTIN/classificador.json");
-            var arquivojson = File.ReadAllText(caminho);
+            string arquivojson = File.ReadAllText(caminho);
             ClassificadorTIN.Classificador(arquivojson);
             Console.WriteLine();
             break;
         case "3":
             Console.Write("Digite uma cadeia: ");
-            var cadeia = Console.ReadLine() ?? "";
+            string cadeia = Console.ReadLine() ?? "";
 
             if (string.IsNullOrEmpty(cadeia))
                 Console.Write("Texto inválido tente novamente.");

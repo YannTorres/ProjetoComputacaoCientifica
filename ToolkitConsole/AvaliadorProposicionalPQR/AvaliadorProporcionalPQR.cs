@@ -16,6 +16,7 @@ public static class AvaliadorProporcionalPQR
         return p_ou_q == nao_r;
     }
 
+    // Verificador de Verdadeiro e Falso
     static bool LerValorLogico(string nomeVariavel)
     {
         while (true)
@@ -41,6 +42,7 @@ public static class AvaliadorProporcionalPQR
         return valor ? "Verdadeiro" : "Falso";
     }
 
+    // Tabelela verdades dos possíveis resultados das fórmulas
     static void ImprimirTabelaVerdade(string nomeFormula, Func<bool, bool, bool, bool> formula)
     {
         Console.WriteLine($"\n--- Tabela-Verdade para a Fórmula: {nomeFormula} ---\n");
