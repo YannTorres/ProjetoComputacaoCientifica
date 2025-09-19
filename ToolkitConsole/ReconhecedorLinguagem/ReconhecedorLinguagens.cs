@@ -18,8 +18,8 @@ namespace ToolkitConsole.ReconhecedorLinguagens
             Console.WriteLine("1 - L_par_a  (número par de 'a')");
             Console.WriteLine("2 - L = { w | w = a b* }  (começa com 'a' seguido de zero ou mais 'b')");
             Console.Write("Opção: ");
-            string? opcaoRaw = Console.ReadLine();
-            string opcao = (opcaoRaw ?? string.Empty).Trim();
+            string? opcaoNaoTratada = Console.ReadLine();
+            string opcao = (opcaoNaoTratada ?? string.Empty).Trim();
 
             if (opcao != "1" && opcao != "2")
             {
@@ -35,6 +35,12 @@ namespace ToolkitConsole.ReconhecedorLinguagens
 
             if (opcao == "1")
             {
+                if (string.IsNullOrEmpty(palavra))
+                {
+                    Console.WriteLine("Entrada inválida: a palavra não pode ser vazia.");
+                    return;
+                }
+
                 aceita = PertenceLParA(palavra);
                 nomeLinguagem = "L_par_a";
             }
@@ -57,14 +63,18 @@ namespace ToolkitConsole.ReconhecedorLinguagens
                 Aceita = aceita
             };
 
-            string json = JsonSerializer.Serialize(resultado, new JsonSerializerOptions { WriteIndented = true });
-            Console.WriteLine(json);
-            Console.WriteLine(aceita ? "ACEITA" : "REJEITA");
+            Console.WriteLine();
+            Console.WriteLine("Palavra Digitada: " + resultado.Palavra);
+            Console.WriteLine("Linguagem Selecionada: " + resultado.Linguagem);
+            Console.Write("Palavra foi Aceita? ");
+            Console.Write(aceita ? "ACEITA" : "REJEITA");
             Console.WriteLine();
         }
 
         private static bool ValidarAlfabeto(string palavra)
         {
+            if (string.IsNullOrEmpty(palavra)) return false;
+
             foreach (char c in palavra)
             {
                 if (c != 'a' && c != 'b') return false;
@@ -75,6 +85,7 @@ namespace ToolkitConsole.ReconhecedorLinguagens
 
         private static bool PertenceLParA(string palavra)
         {
+
             int contadorA = 0;
             foreach (char c in palavra)
             {

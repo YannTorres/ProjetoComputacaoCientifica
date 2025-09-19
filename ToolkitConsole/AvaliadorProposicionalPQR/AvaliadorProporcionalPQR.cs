@@ -63,8 +63,8 @@ public static class AvaliadorProporcionalPQR
     }
     public static void Avaliador()
     {
-        bool stop = false;
-        while (stop == false)
+        bool parar = false;
+        while (parar == false)
         {
             
             Console.WriteLine("Escolha uma opção:");
@@ -104,7 +104,7 @@ public static class AvaliadorProporcionalPQR
 
                 case "5":
                     Console.WriteLine("Saindo do programa...");
-                    stop = true;
+                    parar = true;
                     break;
 
                 default:

@@ -35,7 +35,7 @@ public static class ClassificadorTIN
         foreach (Problema p in problemas)
         {
             Console.WriteLine($"\nProblema: {p.Descricao}");
-            Console.Write("Classificação (T/I/N): ");
+            Console.Write("Classificação (Tratável/Intratável/Não computável): ");
             string? resposta = Console.ReadLine()?.Trim().ToUpper();
 
             if (string.IsNullOrEmpty(resposta))

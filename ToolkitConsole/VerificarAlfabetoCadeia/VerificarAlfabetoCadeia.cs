@@ -12,14 +12,14 @@ public static class VerificarAlfabetoCadeia
 
         int primeiroEspaco = entrada.IndexOf(' ');
 
-        string simboloString;
+        string simboloCadeia;
         string cadeia;
 
         if (primeiroEspaco == -1) 
         {
             if (entrada.Length == 1)
             {
-                simboloString = entrada;
+                simboloCadeia = entrada;
                 cadeia = string.Empty; 
             }
             else
@@ -29,16 +29,16 @@ public static class VerificarAlfabetoCadeia
         }
         else
         {
-            simboloString = entrada.Substring(0, primeiroEspaco);
+            simboloCadeia = entrada.Substring(0, primeiroEspaco);
             cadeia = entrada.Substring(primeiroEspaco).TrimStart();
         }
 
-        if (simboloString.Length != 1)
+        if (simboloCadeia.Length != 1)
         {
-            return $"Entrada de símbolo inválida: '{simboloString}'. Por favor, insira apenas um caractere.";
+            return $"Entrada de símbolo inválida: '{simboloCadeia}'. Por favor, insira apenas um caractere.";
         }
 
-        char simbolo = simboloString[0];
+        char simbolo = simboloCadeia[0];
         bool simboloValido = _alfabeto.Contains(simbolo);
         string resultadoSimbolo = simboloValido
             ? $"O símbolo '{simbolo}' é VÁLIDO (pertence a Σ)."
