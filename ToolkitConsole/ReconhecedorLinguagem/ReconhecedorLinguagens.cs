@@ -68,7 +68,9 @@ namespace ToolkitConsole.ReconhecedorLinguagens
             Console.WriteLine("Linguagem Selecionada: " + resultado.Linguagem);
             Console.Write("Palavra foi Aceita? ");
             Console.Write(aceita ? "ACEITA" : "REJEITA");
-            Console.WriteLine();
+
+            Console.WriteLine("Pressione enter para continuar...");
+            Console.ReadLine();
         }
 
         private static bool ValidarAlfabeto(string palavra)

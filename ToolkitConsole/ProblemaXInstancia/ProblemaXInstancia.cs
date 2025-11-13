@@ -59,7 +59,7 @@ public class ProblemaXInstancia
         Console.WriteLine($"Total de frases: {problemas.Count}");
         Console.WriteLine($"Acertos: {acertos}");
         Console.WriteLine($"Erros: {erros}");
-        Console.WriteLine("Pressione qualquer tecla para continuar...");
+        Console.WriteLine("Pressione enter para continuar...");
         Console.ReadLine();
     }
 }

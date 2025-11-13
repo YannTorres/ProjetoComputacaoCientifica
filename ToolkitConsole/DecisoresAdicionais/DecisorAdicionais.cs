@@ -57,6 +57,9 @@ public class DecisorAdicionais
         {
             Console.WriteLine("Resultado: Não");
         }
+
+        Console.WriteLine("Pressione enter para continuar...");
+        Console.ReadLine();
     }
 
     // Verifica se TODOS os caracteres (c) na palavra contem 'a' ou 'b'

@@ -18,12 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DetectorLoop\" />
-    <Folder Include="SimuladorAFD\" />
-    <Folder Include="ReconheciveisNaoTermina\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="ProblemaXInstancia\ProblemaXInstancia.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

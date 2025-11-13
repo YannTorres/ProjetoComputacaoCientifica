@@ -2,8 +2,11 @@
 using ToolkitConsole.ClassificadorTIN;
 using ToolkitConsole.DecisoresAdicionais;
 using ToolkitConsole.DecisorTerminaComB;
+using ToolkitConsole.DetectorLoop;
 using ToolkitConsole.ProblemaXInstancia;
 using ToolkitConsole.ReconhecedorLinguagens;
+using ToolkitConsole.ReconheciveisNaoTermina;
+using ToolkitConsole.SimuladorAFD;
 using ToolkitConsole.VerificarAlfabetoCadeia;
 
 bool loop = true;
@@ -68,6 +71,21 @@ while (loop)
         case "7":
             Console.WriteLine();
             DecisorAdicionais.Executar();
+            Console.WriteLine();
+            break;
+        case "8":
+            Console.WriteLine();
+            ReconheciveisNaoTermina.Executar();
+            Console.WriteLine();
+            break;
+        case "9":
+            Console.WriteLine();
+            DetectorLoop.Executar();
+            Console.WriteLine();
+            break;
+        case "10":
+            Console.WriteLine();
+            SimuladorAFD.Executar();
             Console.WriteLine();
             break;
         case "0":
