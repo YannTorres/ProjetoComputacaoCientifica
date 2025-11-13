@@ -1,6 +1,8 @@
 ﻿using ToolkitConsole.AvaliadorProposicionalPQR;
 using ToolkitConsole.ClassificadorTIN;
+using ToolkitConsole.DecisoresAdicionais;
 using ToolkitConsole.DecisorTerminaComB;
+using ToolkitConsole.ProblemaXInstancia;
 using ToolkitConsole.ReconhecedorLinguagens;
 using ToolkitConsole.VerificarAlfabetoCadeia;
 
@@ -55,6 +57,19 @@ while (loop)
             ReconhecedorLinguagens.Executar();
             Console.WriteLine();
             break;
+        case "6":
+            Console.WriteLine("Altere o Json dentro da pasta ProblemaXInstancia se quiser alterar os problemas");
+            string caminhoProblemaXInstancia = Path.Combine(AppContext.BaseDirectory, "ProblemaXInstancia/ProblemaXInstancia.json");
+            string arquivojsonProblemaXInstancia = File.ReadAllText(caminhoProblemaXInstancia);
+
+            ProblemaXInstancia.Executar(arquivojsonProblemaXInstancia);
+            Console.WriteLine();
+            break;
+        case "7":
+            Console.WriteLine();
+            DecisorAdicionais.Executar();
+            Console.WriteLine();
+            break;
         case "0":
             loop = false;
             break;
@@ -74,10 +89,10 @@ void ExibirMenu()
     Console.WriteLine("3 - Decisor: termina com 'b'?");
     Console.WriteLine("4 - Avaliador proposicional (P,Q,R)");
     Console.WriteLine("5 - Reconhecedor: L_par_a e a b*");
-    //Console.WriteLine("6 - Problema x instancia por JSON");
-    //Console.WriteLine("7 - Decisores: L_fim_b e L_mult3_b");
-    //Console.WriteLine("8 - Reconhecedor que pode nao terminar (a^ib ^ i)");
-    //Console.WriteLine("9 - Detector ingenuo de loop");
-    //Console.WriteLine("10 - Simulador AFD simples (termina com 'b')");
+    Console.WriteLine("6 - Problema x instancia por JSON");
+    Console.WriteLine("7 - Decisores: L_fim_b e L_mult3_b");
+    Console.WriteLine("8 - Reconhecedor que pode nao terminar (a^ib ^ i)");
+    Console.WriteLine("9 - Detector ingenuo de loop");
+    Console.WriteLine("10 - Simulador AFD simples (termina com 'b')");
     Console.WriteLine("0 - Sair");
 }

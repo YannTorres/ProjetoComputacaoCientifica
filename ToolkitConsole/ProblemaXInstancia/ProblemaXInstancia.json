@@ -1,0 +1,18 @@
+[
+  {
+    "frase": "Ordenar uma lista de números inteiros.",
+    "resultado": "P"
+  },
+  {
+    "frase": "Encontrar a solução para o sistema linear: $2x + 3y = 8$ e $x - y = 1$.",
+    "resultado": "I"
+  },
+  {
+    "frase": "Encontrar o menor caminho entre dois nós em um grafo ponderado.",
+    "resultado": "P"
+  },
+  {
+    "frase": "Calcular a raiz quadrada do número 144.",
+    "resultado": "I"
+  }
+]
